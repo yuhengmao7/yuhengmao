@@ -1,0 +1,22 @@
+.journey { margin-top: 150px; padding-top: 25px; border-top: 1px solid #b4b9ad; }
+.journey-heading { display: grid; grid-template-columns: 1fr 1fr; gap: 10%; align-items: end; }
+.journey-heading h2 { margin: 26px 0 0; font-size: clamp(46px, 5.5vw, 88px); line-height: .88; letter-spacing: -.075em; font-weight: 600; }
+.journey-heading h2 em { font-family: "Playfair Display", serif; font-weight: 500; }
+.journey-heading > p { margin: 0 0 8px; max-width: 480px; color: #586258; font-size: 14px; line-height: 1.8; }
+.journey-layout { display: grid; grid-template-columns: 42% 1fr; margin-top: 76px; border-top: 1px solid #b4b9ad; }
+.education-list { border-right: 1px solid #b4b9ad; }
+.education-item { appearance: none; width: 100%; min-height: 170px; text-align: left; cursor: pointer; padding: 24px 35px 24px 0; background: transparent; border: 0; border-bottom: 1px solid #b4b9ad; color: #162017; transition: background .2s, padding .2s; }
+.education-item:hover, .education-item.is-active { padding-left: 18px; background: rgba(50, 76, 51, .07); }
+.education-item span, .education-item small { display: block; font: 10px/1.4 "DM Mono", monospace; letter-spacing: .07em; color: #5f6b60; }
+.education-item strong { display: block; margin-top: 13px; font-size: clamp(17px, 1.35vw, 22px); line-height: 1.22; letter-spacing: -.035em; font-weight: 600; }
+.education-item p { margin: 10px 0 0; color: #536057; font-size: 12px; line-height: 1.6; }
+.education-item p em { color: #162017; font-style: normal; }.education-item small { margin-top: 10px; color: #3a573d; }
+.journey-map { position: relative; min-height: 510px; overflow: hidden; isolation: isolate; color: #f4fbff; background: radial-gradient(circle at 83% 42%, #19435c 0, #0a1e30 30%, #061321 72%); }
+.journey-map::before { content: ''; position: absolute; z-index: -1; inset: 0; opacity: .7; background-image: radial-gradient(circle at 14% 21%, #a2dbe7 0 1px, transparent 1.5px), radial-gradient(circle at 38% 76%, #a2dbe7 0 1px, transparent 1.5px), radial-gradient(circle at 69% 17%, #a2dbe7 0 1px, transparent 1.5px), radial-gradient(circle at 90% 63%, #a2dbe7 0 1px, transparent 1.5px); background-size: 171px 143px, 223px 167px, 129px 191px, 287px 211px; }
+.journey-map svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.map-grid path { fill: none; stroke: rgba(134, 198, 217, .14); stroke-width: 1; }.world-land { fill: rgba(72, 127, 149, .28); stroke: rgba(145, 215, 229, .36); stroke-width: .75; }.route { fill: none; stroke: #77dcec; stroke-width: 2.4; stroke-linecap: round; }.route-short { stroke-dasharray: 4 7; }.route-long { stroke-dasharray: 3 10; opacity: .35; }.route-pulse { stroke: #b6f5ff; stroke-dasharray: 10 840; filter: drop-shadow(0 0 5px rgba(119,220,236,.8)); animation: travel-route 4.8s linear infinite; }
+@keyframes travel-route { to { stroke-dasharray: 690 160; } }
+.map-point { position: absolute; z-index: 2; transform: translate(-50%, -50%); display: grid; appearance: none; border: 0; background: transparent; color: #dbfbff; cursor: pointer; }.point-dot { width: 12px; height: 12px; display: block; border-radius: 50%; background: #071827; border: 2px solid #89e8f4; box-shadow: 0 0 0 0 rgba(119,220,236,.28); transition: transform .2s, box-shadow .2s, background .2s; }.map-point:hover .point-dot,.map-point.is-active .point-dot { transform: scale(1.32); background: #85edf8; box-shadow: 0 0 0 8px rgba(119,220,236,.18), 0 0 18px rgba(119,220,236,.85); }.map-detail { position: absolute; z-index: 1; right: 28px; bottom: 27px; padding: 18px 20px; min-width: 220px; border: 1px solid rgba(163,225,236,.25); background: rgba(9,28,45,.65); backdrop-filter: blur(12px); }.map-detail span { display: block; color: #8dddeb; font: 10px "DM Mono", monospace; letter-spacing: .07em; }.map-detail strong { display: block; margin-top: 9px; font-size: 21px; letter-spacing: -.04em; }.map-detail p { margin: 5px 0 0; color: #c5e4e9; font-size: 12px; line-height: 1.45; }
+@media (prefers-reduced-motion: reduce) { .route-pulse { animation: none; stroke-dasharray: 10 10; } }
+@media (max-width: 760px) { .journey { margin-top: 90px; }.journey-heading { grid-template-columns: 1fr; gap: 26px; }.journey-heading h2 { font-size: 52px; }.journey-layout { grid-template-columns: 1fr; margin-top: 48px; }.education-list { border-right: 0; }.education-item { padding-right: 15px; min-height: 145px; }.journey-map { min-height: 390px; }.map-detail { right: 15px; bottom: 15px; }.map-point { font-size: 9px; } }
+
