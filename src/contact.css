@@ -1,0 +1,23 @@
+.contact-emails {
+  display: flex;
+  gap: 24px;
+  margin-top: 28px;
+  color: #d3ded0;
+  font: 11px "DM Mono", monospace;
+  letter-spacing: .04em;
+}
+
+.contact-emails a {
+  border-bottom: 1px solid rgba(211, 222, 208, .45);
+  padding-bottom: 5px;
+}
+
+@media (max-width: 760px) {
+  .contact-emails {
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 22px;
+    font-size: 10px;
+  }
+}
+
