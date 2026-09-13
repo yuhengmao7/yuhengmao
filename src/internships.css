@@ -1,0 +1,109 @@
+.internships {
+  overflow: hidden;
+  padding: 160px 0;
+  background: #d7ddd5;
+  color: #132118;
+}
+
+.internships-heading {
+  display: grid;
+  grid-template-columns: .8fr 1.25fr .6fr;
+  align-items: end;
+}
+
+.internships-heading h2 {
+  margin: 0;
+  font-size: clamp(53px, 7vw, 110px);
+  line-height: .86;
+  letter-spacing: -.075em;
+  font-weight: 600;
+}
+
+.internships-heading h2 em {
+  font-family: "Playfair Display", serif;
+  font-weight: 500;
+}
+
+.internships-heading > p:last-child {
+  max-width: 250px;
+  margin: 0 0 8px;
+  color: #526258;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.internship-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 100px;
+  border: 1px solid #9eaca1;
+  background: #9eaca1;
+}
+
+.internship-entry {
+  position: relative;
+  min-height: 184px;
+  padding: 30px 34px;
+  background: #d7ddd5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  transition: background .3s ease, color .3s ease;
+}
+
+.internship-entry::before {
+  content: '';
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  right: -42px;
+  bottom: -48px;
+  border-radius: 50%;
+  border: 1px solid rgba(24, 52, 35, .24);
+  transition: transform .45s ease;
+}
+
+.internship-entry:hover {
+  background: #173423;
+  color: #edf1e8;
+}
+
+.internship-entry:hover::before {
+  transform: scale(2.3);
+}
+
+.internship-entry strong,
+.internship-entry time {
+  position: relative;
+  z-index: 1;
+}
+
+.internship-entry strong {
+  max-width: 88%;
+  font-size: clamp(24px, 2.5vw, 42px);
+  line-height: 1;
+  letter-spacing: -.055em;
+  font-weight: 600;
+}
+
+.internship-entry time {
+  color: #617067;
+  font: 11px "DM Mono", monospace;
+  letter-spacing: .08em;
+}
+
+.internship-entry:hover time {
+  color: #c8d8ca;
+}
+
+@media (max-width: 760px) {
+  .internships { padding: 90px 0; }
+  .internships-heading { grid-template-columns: 1fr; gap: 30px; }
+  .internships-heading > p:last-child { margin: 0; }
+  .internship-list { grid-template-columns: 1fr; margin-top: 55px; }
+  .internship-entry { min-height: 145px; padding: 24px; }
+  .internship-entry strong { font-size: 29px; }
+}
+
