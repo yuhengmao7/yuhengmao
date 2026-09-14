@@ -12,7 +12,15 @@
   padding-bottom: 5px;
 }
 
+.nav .contact-pill {
+  transform: translateX(28px);
+}
+
 @media (max-width: 760px) {
+  .nav .contact-pill {
+    transform: none;
+  }
+
   .contact-emails {
     flex-direction: column;
     gap: 12px;
@@ -20,4 +28,3 @@
     font-size: 10px;
   }
 }
-
