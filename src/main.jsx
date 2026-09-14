@@ -8,7 +8,14 @@ import './projects.css'
 import './journey.css'
 import './contact.css'
 import './internships.css'
+import './moments.css'
 import aucklandAbout from './assets/auckland-about.png'
+import coastHike from './assets/moments/coast-hike.jpg'
+import rockyCoast from './assets/moments/rocky-coast.jpg'
+import tokyoNight from './assets/moments/tokyo-night.jpg'
+import diving from './assets/moments/diving.jpg'
+import spiral from './assets/moments/spiral.jpg'
+import highland from './assets/moments/highland.jpg'
 
 const researchAreas = [
   ['01', 'Urban nature & health', 'How everyday contact with green and blue environments shapes physical activity, mental health, and wellbeing.'],
@@ -39,7 +46,7 @@ const internships = [
 ]
 function Arrow() { return <span className="arrow" aria-hidden="true">↗</span> }
 const education = [
-  { city: 'Auckland', years: '2026/03 — NOW', degree: 'PhD Student in Planning', school: 'Faculty of Engineering and Design, Architecture and Planning', university: 'University of Auckland', note: 'The University of Auckland Doctoral Scholarship (UoADS)', coordinates: [174.7681, -36.8522] },
+  { city: 'Auckland', years: '2026/03 — NOW', degree: 'PhD Student', school: 'Faculty of Engineering and Design, Architecture and Planning', university: 'University of Auckland', note: 'The University of Auckland Doctoral Scholarship (UoADS)', coordinates: [174.7681, -36.8522] },
   { city: 'Shanghai', years: '2023/09 — 2025/06', degree: 'Academic Master of Landscape Architecture (Science)', school: 'School of Design', university: 'Shanghai Jiao Tong University', coordinates: [121.4737, 31.2304] },
   { city: 'Nanjing', years: '2019/09 — 2023/06', degree: 'Bachelor of Landscape Architecture', school: 'College of Landscape Architecture', university: 'Nanjing Forestry University', coordinates: [118.7969, 32.0603] },
 ]
@@ -56,16 +63,42 @@ function EducationJourney() {
 function Internships() {
   return <section className="internships" id="experience"><div className="shell"><div className="internships-heading"><p className="section-index">( 02 — EXPERIENCE )</p><h2>Selected<br /><em>internships.</em></h2><p>Practice across investment, consulting, conservation, and design.</p></div><div className="internship-list">{internships.map(([company, period]) => <article className="internship-entry" key={company}><strong>{company}</strong><time>{period}</time></article>)}</div></div></section>
 }
+function SomethingMore() {
+  const moments = [
+    [coastHike, 'Walking the coast'],
+    [rockyCoast, 'A changing horizon'],
+    [tokyoNight, 'City nights'],
+    [diving, 'Below the surface'],
+    [spiral, 'Looking for new angles'],
+    [highland, 'The long way out'],
+  ]
+  return <section className="moments" id="more">
+    <div className="shell moments-inner">
+      <div className="moments-intro">
+        <p className="section-index">( 06 — SOMETHING MORE )</p>
+        <p className="moments-note">FIELD NOTES / 2026</p>
+        <h2>Life, beyond<br /><em>the research.</em></h2>
+        <p className="moments-copy">When I am not studying cities, I like to move through them — and beyond them. Travel, tennis, and a curiosity for unfamiliar landscapes keep me looking outward, one new place at a time.</p>
+        <div className="moments-tags"><span>TRAVEL</span><span>TENNIS</span><span>EXPLORATION</span></div>
+      </div>
+      <div className="moments-gallery" aria-label="Travel and exploration photographs">
+        {moments.map(([image, alt], index) => <figure className={`moment moment-${index + 1}`} key={alt}><img src={image} alt={alt} loading="lazy" /><figcaption>{String(index + 1).padStart(2, '0')} / {alt}</figcaption></figure>)}
+        <div className="moments-stamp"><span>KEEP<br />EXPLORING</span><i>↗</i></div>
+      </div>
+    </div>
+  </section>
+}
 function App() { return <main>
   <section className="hero" id="top"><img className="hero-image" src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=2400&q=90" alt="Tree canopy viewed from below" /><div className="hero-overlay" />
     <nav className="nav shell"><a className="wordmark" href="#top">YUHENG MAO<span> / RESEARCH</span></a><div className="nav-links"><a href="#about">ABOUT</a><a href="#experience">EXPERIENCE</a><a href="#research">RESEARCH</a><a href="#publications">PUBLICATIONS</a></div><a className="contact-pill" href="#contact">CONTACT <Arrow /></a></nav>
     <div className="hero-content shell"><p className="eyebrow">URBAN LANDSCAPES · HUMAN HEALTH · SPATIAL INTELLIGENCE</p><h1>Yuheng<br /><em>Mao.</em></h1><div className="hero-bottom"><p>PhD Candidate<br />University of Auckland</p><a href="#research" className="scroll-link">EXPLORE THE RESEARCH <span>↓</span></a></div></div>
   </section>
-  <section className="about shell section" id="about"><p className="section-index">( 01 — ABOUT )</p><div className="about-grid"><div className="portrait-wrap"><img src={aucklandAbout} alt="Auckland skyline, harbour and the Auckland Domain" /><span className="portrait-caption">AUCKLAND, AOTEAROA<br />NEW ZEALAND</span></div><div className="about-copy"><p className="lead">I study the relationships between urban landscapes and people — with a focus on environment, health, policy, and behaviour.</p><p className="body-copy">My work brings landscape planning, public health, and spatial analysis into conversation. I am interested in how the everyday environments around us can be measured, understood, and designed to support more equitable and healthy urban life.</p><div className="details"><a href="https://profiles.auckland.ac.nz/yuheng-mao/about" target="_blank" rel="noreferrer">UNIVERSITY OF AUCKLAND PROFILE <Arrow /></a><span>FACULTY OF ENGINEERING AND DESIGN</span></div></div></div><div className="focus-line"><span>RESEARCH FOCUS</span><p>Urban green space · Environmental exposure · Physical activity · Population health · Geospatial AI</p></div><EducationJourney /></section>
+  <section className="about shell section" id="about"><p className="section-index">( 01 — ABOUT )</p><div className="about-grid"><div className="portrait-wrap"><img src={aucklandAbout} alt="Auckland skyline, harbour and the Auckland Domain" /><span className="portrait-caption">AUCKLAND, AOTEAROA<br />NEW ZEALAND</span></div><div className="about-copy"><p className="lead">I study the relationships between urban landscapes and people — with a focus on environment, health, policy, and behaviour.</p><p className="body-copy">My work brings landscape architecture, public health, and spatial analysis into conversation. I am interested in how the everyday environments around us can be measured, understood, and designed to support more equitable and healthy urban life.</p><div className="details"><a href="https://profiles.auckland.ac.nz/yuheng-mao/about" target="_blank" rel="noreferrer">UNIVERSITY OF AUCKLAND PROFILE <Arrow /></a><span>FACULTY OF ENGINEERING AND DESIGN</span></div></div></div><div className="focus-line"><span>RESEARCH FOCUS</span><p>Urban green space · Environmental exposure · Physical activity · Population health · Geospatial AI</p></div><EducationJourney /></section>
   <Internships />
   <section className="research section" id="research"><div className="shell research-heading"><p className="section-index">( 03 — RESEARCH )</p><h2>Evidence for<br /><em>better cities.</em></h2><p>Connecting environmental conditions with the experiences and health of urban populations.</p></div><div className="research-list shell">{researchAreas.map(([num, title, copy]) => <article className="research-card" key={num}><div><span>{num}</span><h3>{title}</h3></div><p>{copy}</p><Arrow /></article>)}</div><div className="projects shell"><div className="projects-label"><p className="section-index">( SELECTED PROJECTS )</p><p>Current research projects on the environmental foundations of healthier urban life.</p></div><div className="project-grid">{selectedProjects.map((project, index) => <article className="project-card" key={project.title}><div className="project-image"><img src={project.image} alt="" /><span>0{index + 1}</span></div><div className="project-copy"><h3>{project.title}</h3><p>{project.description}</p></div></article>)}</div></div></section>
   <section className="publications shell section" id="publications"><div className="publications-heading"><p className="section-index">( 04 — SELECTED PUBLICATIONS )</p><h2>Research<br /><em>outputs.</em></h2><a href="https://scholar.google.com/citations?user=z0SQ7CUAAAAJ&hl=en&oi=ao" target="_blank" rel="noreferrer" className="outline-link">VIEW GOOGLE SCHOLAR <Arrow /></a></div><div className="publication-list">{publications.map((paper, i) => <a href={paper.url} target="_blank" rel="noreferrer" className="publication" key={paper.title}><span className="pub-index">0{i + 1}</span><span className="pub-year">{paper.year}</span><div><h3>{paper.title}</h3><p>{paper.journal}</p></div><Arrow /></a>)}</div></section>
   <section className="contact" id="contact"><div className="contact-orb orb-a" /><div className="contact-orb orb-b" /><div className="shell contact-inner"><p className="section-index">( 05 — CONNECT )</p><p className="contact-kicker">For research collaborations, speaking, and academic conversations.</p><a className="contact-title" href="mailto:yuheng.mao@auckland.ac.nz">Start a<br /><em>conversation.</em> <Arrow /></a><div className="contact-emails"><a href="mailto:yuheng.mao@auckland.ac.nz">yuheng.mao@auckland.ac.nz</a><a href="mailto:maoyuheng7@outlook.com">maoyuheng7@outlook.com</a></div><div className="contact-footer"><a href="https://profiles.auckland.ac.nz/yuheng-mao/about" target="_blank" rel="noreferrer">UNIVERSITY PROFILE</a><span>© 2026 YUHENG MAO</span><a href="#top">BACK TO TOP ↑</a></div></div></section>
+  <SomethingMore />
 </main> }
 createRoot(document.getElementById('root')).render(<StrictMode><App /></StrictMode>)
 
