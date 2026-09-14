@@ -39,7 +39,7 @@ const internships = [
 ]
 function Arrow() { return <span className="arrow" aria-hidden="true">↗</span> }
 const education = [
-  { city: 'Auckland', years: '2026/03 — NOW', degree: 'PhD Student', school: 'Faculty of Engineering and Design, Architecture and Planning', university: 'University of Auckland', note: 'The University of Auckland Doctoral Scholarship (UoADS)', coordinates: [174.7681, -36.8522] },
+  { city: 'Auckland', years: '2026/03 — NOW', degree: 'PhD Student in Planning', school: 'Faculty of Engineering and Design, Architecture and Planning', university: 'University of Auckland', note: 'The University of Auckland Doctoral Scholarship (UoADS)', coordinates: [174.7681, -36.8522] },
   { city: 'Shanghai', years: '2023/09 — 2025/06', degree: 'Academic Master of Landscape Architecture (Science)', school: 'School of Design', university: 'Shanghai Jiao Tong University', coordinates: [121.4737, 31.2304] },
   { city: 'Nanjing', years: '2019/09 — 2023/06', degree: 'Bachelor of Landscape Architecture', school: 'College of Landscape Architecture', university: 'Nanjing Forestry University', coordinates: [118.7969, 32.0603] },
 ]
