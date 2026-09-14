@@ -67,7 +67,7 @@ function SomethingMore() {
   const moments = [
     [coastHike, 'Walking the coast'],
     [rockyCoast, 'A changing horizon'],
-    [tokyoNight, 'City nights'],
+    [tokyoNight, 'In the wilderness'],
     [diving, 'Below the surface'],
     [spiral, 'Looking for new angles'],
     [highland, 'The long way out'],
